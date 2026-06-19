@@ -56,6 +56,33 @@ export const INITIAL_PROFILES: Profile[] = [
     created_at: '2026-04-02T13:45:00Z',
   },
   {
+    id: 'user-artisan-7',
+    role: 'artisan',
+    full_name: 'Rita Mensah',
+    phone: '+233 24 990 1234',
+    location: 'East Legon, Accra',
+    profile_image: 'https://images.unsplash.com/photo-1581579438747-1dc8d1e0ca96?auto=format&fit=crop&w=300&q=80',
+    created_at: '2026-04-12T10:00:00Z',
+  },
+  {
+    id: 'user-artisan-8',
+    role: 'artisan',
+    full_name: 'James Addo',
+    phone: '+233 50 112 3456',
+    location: 'Dzorwulu, Accra',
+    profile_image: 'https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?auto=format&fit=crop&w=300&q=80',
+    created_at: '2026-04-14T11:15:00Z',
+  },
+  {
+    id: 'user-artisan-9',
+    role: 'artisan',
+    full_name: 'Sarah Ofori',
+    phone: '+233 20 555 9090',
+    location: 'Airport Residential, Accra',
+    profile_image: 'https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=300&q=80',
+    created_at: '2026-04-18T09:30:00Z',
+  },
+  {
     id: 'user-customer-1',
     role: 'customer',
     full_name: 'Sena Adjei',
@@ -180,6 +207,54 @@ export const INITIAL_ARTISAN_PROFILES: ArtisanProfile[] = [
     average_rating: 4.6,
     total_reviews: 5,
     created_at: '2026-04-02T14:00:00Z',
+  },
+  {
+    id: 'artisan-profile-7',
+    user_id: 'user-artisan-7',
+    business_name: 'Rita Mensah Gourmet Catering',
+    category: 'Cooks',
+    description: 'Signature Ghanaian traditional dishes, custom event buffets, and private chef dining services. Specializing in standard local Jollof, soups, in-home meal prep and elite corporate host catering.',
+    region: 'Greater Accra',
+    city: 'East Legon',
+    gps_location: 'GA-112-9014',
+    years_experience: 8,
+    verified: true,
+    featured: true,
+    average_rating: 4.9,
+    total_reviews: 12,
+    created_at: '2026-04-12T11:00:00Z',
+  },
+  {
+    id: 'artisan-profile-8',
+    user_id: 'user-artisan-8',
+    business_name: 'James Addo Antigravity Soft Lab',
+    category: 'Software Developers',
+    description: 'Bespoke custom SaaS websites, React/Next.js dynamic applications, e-commerce stores, Android mobile apps and direct PostgreSQL database integrations.',
+    region: 'Greater Accra',
+    city: 'Dzorwulu',
+    gps_location: 'GA-045-8812',
+    years_experience: 10,
+    verified: true,
+    featured: true,
+    average_rating: 4.9,
+    total_reviews: 16,
+    created_at: '2026-04-14T12:00:00Z',
+  },
+  {
+    id: 'artisan-profile-9',
+    user_id: 'user-artisan-9',
+    business_name: 'Sarah Ofori Luxury Events & Decors',
+    category: 'Event Planners',
+    description: 'Bespoke planning, coordination and production of Ghanaian traditional weddings, corporate summits, anniversaries and premium high-society parties.',
+    region: 'Greater Accra',
+    city: 'Accra',
+    gps_location: 'GA-202-0990',
+    years_experience: 5,
+    verified: true,
+    featured: false,
+    average_rating: 4.8,
+    total_reviews: 10,
+    created_at: '2026-04-18T10:00:00Z',
   }
 ];
 
@@ -239,6 +314,47 @@ export const INITIAL_SERVICES: Service[] = [
     service_name: '3KVA Off-Grid Hybrid Solar Setup',
     price_range: 'GH₵ 12,000 - GH₵ 18,000',
     description: 'Full package: 4x 350W solar panels, hybrid solar inverter, 2x lithium batteries, distribution panel, mounting frames and setup.',
+  },
+  
+  // Artisan 7 (Cooks) Services
+  {
+    id: 'service-8',
+    artisan_id: 'artisan-profile-7',
+    service_name: 'Traditional Ghanaian Wedding Buffet (100+ guests)',
+    price_range: 'GH₵ 4,500 - GH₵ 8,040',
+    description: 'Bespoke buffet setup including Jollof rice, Waakye, Banku, Kelewele, assorted meat grills, and custom local drinks.',
+  },
+  {
+    id: 'service-9',
+    artisan_id: 'artisan-profile-7',
+    service_name: 'Private Chef Elegant Jollof Dinner for 5',
+    price_range: 'GH₵ 450 - GH₵ 800',
+    description: 'Exclusive in-home chef prep, gourmet plating, customized ingredients selection, and kitchen clean-up service.',
+  },
+
+  // Artisan 8 (Software Developers) Services
+  {
+    id: 'service-10',
+    artisan_id: 'artisan-profile-8',
+    service_name: 'Executive SaaS & Dynamic Next.js Website',
+    price_range: 'GH₵ 8,000 - GH₵ 20,000',
+    description: 'Custom React Web App coupled with Express server infrastructure, Postgres DB blueprint, Vercel/Cloud Run build triggers, and responsive UI design.',
+  },
+  {
+    id: 'service-11',
+    artisan_id: 'artisan-profile-8',
+    service_name: 'Full E-Commerce Portal with Paystack GHS Link',
+    price_range: 'GH₵ 5,000 - GH₵ 9,500',
+    description: 'Modern shopping site containing cart, custom checkout dashboard, order inventory tracker, real-time metrics, and instant Mobile Money Paystack webhook setups.',
+  },
+
+  // Artisan 9 (Event Planners) Services
+  {
+    id: 'service-12',
+    artisan_id: 'artisan-profile-9',
+    service_name: 'Bespoke Traditional Engagement & Wedding Decor',
+    price_range: 'GH₵ 6,000 - GH₵ 15,000',
+    description: 'Stunning floral canvas setups, high-society canopies, lighting accents, luxury furniture rentals, and complete on-ground day-of management.'
   }
 ];
 

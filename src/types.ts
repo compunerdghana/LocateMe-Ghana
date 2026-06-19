@@ -70,7 +70,10 @@ export type ArtisanCategory =
   | 'Masons'
   | 'Tilers'
   | 'CCTV Installers'
-  | 'Solar Technicians';
+  | 'Solar Technicians'
+  | 'Software Developers'
+  | 'Cooks'
+  | 'Event Planners';
 
 export const ARTISAN_CATEGORIES: ArtisanCategory[] = [
   'Electricians',
@@ -84,6 +87,9 @@ export const ARTISAN_CATEGORIES: ArtisanCategory[] = [
   'Tilers',
   'CCTV Installers',
   'Solar Technicians',
+  'Software Developers',
+  'Cooks',
+  'Event Planners',
 ];
 
 export const GHANA_REGIONS = [

@@ -120,7 +120,7 @@ export default function AuthModals({ isOpen, onClose, onAuthSuccess }: AuthModal
         }
 
         onAuthSuccess(newProfile);
-        setMessage({ type: 'success', text: 'Registration completed successfully! Welcome to LocalServer.' });
+        setMessage({ type: 'success', text: 'Registration completed successfully! Welcome to locateMe.' });
         setTimeout(() => {
           onClose();
         }, 1500);
@@ -174,7 +174,7 @@ export default function AuthModals({ isOpen, onClose, onAuthSuccess }: AuthModal
             <Sparkles className="w-3.5 h-3.5 animate-pulse text-blue-600 animate-spin-slow" />
             <span>SaaS Gateway Portal</span>
           </div>
-          <h3 className="font-sans font-black text-slate-800 text-lg tracking-tight">LocalServer Account</h3>
+          <h3 className="font-sans font-black text-slate-800 text-lg tracking-tight">locateMe Account</h3>
           <p className="text-xs text-slate-500 mt-1">Join the safest digital web system connecting users and trusted artisans.</p>
 
           {/* Tabs */}
@@ -430,6 +430,9 @@ export default function AuthModals({ isOpen, onClose, onAuthSuccess }: AuthModal
                         <option value="Tilers">Tiler</option>
                         <option value="CCTV Installers">CCTV Installer</option>
                         <option value="Solar Technicians">Solar Tech</option>
+                        <option value="Software Developers">Software Developer</option>
+                        <option value="Cooks">Professional Cook</option>
+                        <option value="Event Planners">Event Planner</option>
                       </select>
                     </div>
                   </div>

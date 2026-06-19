@@ -68,7 +68,7 @@ export default function AdminDashboard({
             <Shield className="w-6 h-6 stroke-[2.5]" />
           </div>
           <div>
-            <span className="text-[10px] text-blue-600 font-mono tracking-widest uppercase font-extrabold block">LocalServer Ghana Hub</span>
+            <span className="text-[10px] text-blue-600 font-mono tracking-widest uppercase font-extrabold block">locateMe Ghana Hub</span>
             <h2 className="font-sans font-black text-slate-800 text-lg tracking-tight">Main Platform Executive Console</h2>
           </div>
         </div>

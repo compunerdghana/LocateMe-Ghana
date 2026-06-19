@@ -30,9 +30,9 @@ export default function Navigation({
             </div>
             <div>
               <span className="font-sans font-bold text-lg tracking-tight text-slate-800">
-                LocalServer <span className="text-blue-600 font-semibold italic text-base ml-0.5">Ghana</span>
+                locateMe <span className="text-blue-600 font-extrabold italic text-base ml-0.5">Ghana</span>
               </span>
-              <p className="text-[10px] font-mono tracking-wider text-slate-400 uppercase">Verified Artisans</p>
+              <p className="text-[10px] font-mono tracking-wider text-slate-400 uppercase">Verified Directory</p>
             </div>
           </div>
 
@@ -77,7 +77,7 @@ export default function Navigation({
               className={`px-3.5 py-2 rounded-lg font-sans text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
                 currentView === 'pricing'
                   ? 'text-blue-600 bg-blue-50/70 border-b-2 border-blue-600 rounded-b-none'
-                  : 'text-slate-600 hover:text-blue-650 hover:bg-slate-55'
+                  : 'text-slate-600 hover:text-blue-650 hover:bg-slate-50'
               }`}
             >
               Pricing
@@ -199,7 +199,7 @@ export default function Navigation({
               onNavigate('search');
               setMobileMenuOpen(false);
             }}
-            className="block w-full text-left px-3 py-2 rounded-md text-base font-semibold text-slate-700 hover:text-blue-600 hover:bg-slate-55"
+            className="block w-full text-left px-3 py-2 rounded-md text-base font-semibold text-slate-700 hover:text-blue-600 hover:bg-slate-50"
           >
             Find Artisan
           </button>

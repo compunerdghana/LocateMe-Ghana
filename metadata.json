@@ -1,6 +1,6 @@
 {
-  "name": "LocalServer Ghana",
-  "description": "Ghana's premier modern marketplace for verified local artisans including electricians, plumbers, carpenters, and technicians, styled with an elegant layout.",
+  "name": "locateMe Ghana",
+  "description": "Ghana's premier directory and secure local services locator for certified artisans, software developers, cooks, event planners, and local businesses.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

@@ -341,7 +341,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-55 text-slate-800 flex flex-col font-sans" id="localserver-ghana-root">
+    <div className="min-h-screen bg-slate-50 text-slate-800 flex flex-col font-sans" id="localserver-ghana-root">
       {/* Top Warning Ribbon */}
       <div className="bg-blue-600 py-2 px-4 text-center text-xs font-bold font-mono tracking-tight text-white flex items-center justify-center gap-1.5 shadow-sm" id="top-verification-tag">
         <Sparkles className="w-3.5 h-3.5 animate-pulse text-white shrink-0" />
@@ -381,7 +381,7 @@ export default function App() {
                 </h1>
                 
                 <p className="text-xs sm:text-sm text-slate-500 max-w-xl mx-auto leading-relaxed font-semibold">
-                  LocalServer connects homeowners and corporate centers with certified electricians, plumbers, masons, and solar contractors. Verified location and pricing limits.
+                  locateMe connects homeowners and corporate centers with certified electricians, plumbers, cooks, event planners, developers and other local businesses in Ghana. Verified location and pricing limits.
                 </p>
 
                 {/* Direct Integrated Search Widget */}
@@ -400,7 +400,7 @@ export default function App() {
                     <select
                       value={searchCategory}
                       onChange={(e) => setSearchCategory(e.target.value)}
-                      className="w-full bg-slate-55 border border-slate-200 rounded-xl py-2.5 px-3 text-xs text-slate-805 focus:outline-none focus:border-blue-500 font-semibold cursor-pointer"
+                      className="w-full bg-slate-50 border border-slate-200 rounded-xl py-2.5 px-3 text-xs text-slate-800 focus:outline-none focus:border-blue-500 font-semibold cursor-pointer"
                     >
                       <option value="">All Categories</option>
                       {ARTISAN_CATEGORIES.map((c) => (
@@ -450,15 +450,15 @@ export default function App() {
             <section className="space-y-6" id="featured-artisans-section">
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                 <div>
-                  <h2 className="text-xl font-sans font-extrabold text-white tracking-tight flex items-center gap-2">
+                  <h2 className="text-xl font-sans font-extrabold text-slate-805 tracking-tight flex items-center gap-2">
                     <Award className="w-5 h-5 text-amber-500" />
-                    Gold Tier Premium Artisans
+                    Gold Tier Premium Directory Listings
                   </h2>
-                  <p className="text-xs text-neutral-450 mt-1">Highly-recommended certified local technicians with consistent high ratings.</p>
+                  <p className="text-xs text-slate-500 mt-1 font-semibold">Highly-recommended certified local technicians and professionals with consistent high ratings.</p>
                 </div>
                 <button
                   onClick={() => setCurrentView('search')}
-                  className="px-4 py-2 text-xs font-semibold text-amber-400 border border-amber-400/20 hover:border-amber-400/50 hover:bg-amber-400/5 rounded-lg transition"
+                  className="px-4 py-2 text-xs font-bold text-blue-600 border border-blue-200 hover:border-blue-500 hover:bg-blue-50 rounded-lg transition"
                 >
                   Find More Professional Experts →
                 </button>
@@ -470,52 +470,52 @@ export default function App() {
                   return (
                     <div
                       key={artisan.id}
-                      className="bg-neutral-900 border border-neutral-800 hover:border-neutral-700 rounded-2xl overflow-hidden transition flex flex-col justify-between"
+                      className="bg-white border border-slate-200 hover:border-slate-300 rounded-2xl overflow-hidden transition flex flex-col justify-between shadow-sm hover:shadow-md animate-scale-up"
                     >
                       <div className="p-4 space-y-4">
                         <div className="flex items-center gap-3">
                           <img
                             src={owner?.profile_image || 'https://images.unsplash.com/photo-1540569014015-19a7be504e3a'}
                             alt={owner?.full_name}
-                            className="w-12 h-12 rounded-xl object-cover border border-neutral-800 shadow-sm"
+                            className="w-12 h-12 rounded-xl object-cover border border-slate-200 shadow-sm animate-fade-in"
                           />
                           <div>
                             <div className="flex items-center gap-1.5 flex-wrap">
-                              <h3 className="text-xs font-bold text-white">{artisan.business_name}</h3>
+                              <h3 className="text-xs font-extrabold text-slate-800">{artisan.business_name}</h3>
                               {artisan.verified && (
-                                <CheckCircle className="w-3.5 h-3.5 text-emerald-400 shrink-0" title="Verified Background Check" />
+                                <CheckCircle className="w-3.5 h-3.5 text-blue-600 shrink-0" title="Verified Background Check" />
                               )}
                             </div>
-                            <span className="text-[10px] text-amber-400 font-mono tracking-wide uppercase">{artisan.category}</span>
+                            <span className="text-[10px] text-blue-600 font-mono tracking-wide uppercase font-bold">{artisan.category}</span>
                           </div>
                         </div>
 
-                        <p className="text-xs text-neutral-400 leading-relaxed font-normal line-clamp-3">
+                        <p className="text-xs text-slate-600 leading-relaxed font-normal line-clamp-3">
                           {artisan.description}
                         </p>
 
-                        <div className="flex items-center gap-4 text-[11px] text-neutral-500 font-normal">
+                        <div className="flex items-center gap-4 text-[11px] text-slate-500 font-medium">
                           <span className="flex items-center gap-1">
-                            <MapPin className="w-3.5 h-3.5 text-amber-500" />
+                            <MapPin className="w-3.5 h-3.5 text-blue-500" />
                             {artisan.city}, {artisan.region}
                           </span>
                           <span className="flex items-center gap-1">
-                            <Clock className="w-3.5 h-3.5 text-amber-500" />
-                            {artisan.years_experience} Years Work Experience
+                            <Clock className="w-3.5 h-3.5 text-blue-500" />
+                            {artisan.years_experience} Years Experience
                           </span>
                         </div>
                       </div>
 
-                      <div className="bg-neutral-950 p-4 border-t border-neutral-800/60 flex items-center justify-between">
+                      <div className="bg-slate-50 p-4 border-t border-slate-100 flex items-center justify-between">
                         <div className="flex items-center gap-1">
-                          <Star className="w-4 h-4 text-amber-500 fill-amber-400" />
-                          <span className="font-mono text-xs text-white font-semibold">{artisan.average_rating.toFixed(1)}</span>
-                          <span className="text-[10px] text-neutral-500">({artisan.total_reviews} reviews)</span>
+                          <Star className="w-4 h-4 text-amber-550 fill-amber-400" />
+                          <span className="font-mono text-xs text-slate-700 font-semibold">{artisan.average_rating.toFixed(1)}</span>
+                          <span className="text-[10px] text-slate-450">({artisan.total_reviews} reviews)</span>
                         </div>
 
                         <button
                           onClick={() => handleNavigateToArtisan(artisan.id)}
-                          className="px-3.5 py-1.5 bg-amber-400 hover:bg-amber-300 text-neutral-950 text-xs font-bold rounded-lg transition"
+                          className="px-3.5 py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-lg transition"
                         >
                           View Bio & Specs
                         </button>
@@ -527,27 +527,27 @@ export default function App() {
             </section>
 
             {/* Testimonials */}
-            <section className="bg-neutral-900/40 border border-neutral-900 p-8 rounded-3xl" id="testimonials">
+            <section className="bg-slate-100 border border-slate-200 p-8 rounded-3xl" id="testimonials">
               <div className="text-center max-w-xl mx-auto mb-8">
-                <h2 className="text-lg font-sans font-extrabold text-white">Consistently Trusted Across Ghana</h2>
-                <p className="text-xs text-neutral-500 mt-1">Reviewing testaments from homeowners in Greater Accra, Kumasi, and Takoradi regions.</p>
+                <h2 className="text-lg font-sans font-extrabold text-slate-800">Consistently Trusted Across Ghana</h2>
+                <p className="text-xs text-slate-500 mt-1">Reviewing testaments from homeowners in Greater Accra, Kumasi, and Takoradi regions.</p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-neutral-300 text-xs">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-slate-700 text-xs">
                 {[
                   { name: "John Mahama", role: "East Legon, Accra", count: 5, quote: "Excellent wiring repair. Safe, timely, and certified. Strongly recommended." },
                   { name: "Sena Mensah Adjei", role: "Asokwa, Kumasi", count: 5, quote: "The emergency plumber solved our complex sewage leakage on a Sunday morning." },
                   { name: "Yvonne Appiah", role: "Takoradi Area", count: 5, quote: "The CCTV installer was very detailed. Confirms smartphone connection." }
                 ].map((test, index) => (
-                  <div key={index} className="bg-neutral-950 p-4.5 rounded-xl border border-neutral-800/80 leading-relaxed font-normal">
-                    <div className="flex text-amber-400 gap-0.5 mb-2">
+                  <div key={index} className="bg-white p-4.5 rounded-xl border border-slate-200/80 leading-relaxed font-semibold shadow-sm">
+                    <div className="flex text-amber-500 gap-0.5 mb-2">
                       {Array.from({ length: test.count }).map((_, i) => (
-                        <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                        <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-500" />
                       ))}
                     </div>
-                    <p className="italic text-neutral-300 mb-3">"{test.quote}"</p>
-                    <span className="font-bold text-white block">{test.name}</span>
-                    <span className="text-[10px] text-neutral-500 block">{test.role}</span>
+                    <p className="italic text-slate-650 mb-3">"{test.quote}"</p>
+                    <span className="font-extrabold text-slate-800 block">{test.name}</span>
+                    <span className="text-[10px] text-slate-450 block">{test.role}</span>
                   </div>
                 ))}
               </div>
@@ -559,8 +559,8 @@ export default function App() {
         {currentView === 'categories' && (
           <div className="space-y-6 animate-fade-in" id="view-categories">
             <div>
-              <h2 className="text-2xl font-black text-white">Full Artisans Skill Directory</h2>
-              <p className="text-xs text-neutral-450 mt-1">Select any specialized services category to locate verified artisans in your municipal district.</p>
+              <h2 className="text-2xl font-black text-slate-800">Full Directory Specialty Categories</h2>
+              <p className="text-xs text-slate-500 mt-1 font-semibold">Select any specialized category to locate verified technicians, professionals, and service providers in Ghana.</p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="categories-detailed-grid">
@@ -573,13 +573,13 @@ export default function App() {
                       setSearchCategory(cat_opt);
                       setCurrentView('search');
                     }}
-                    className="p-6 rounded-2xl bg-neutral-900 border border-neutral-800 hover:border-amber-400 hover:bg-neutral-950/40 transition cursor-pointer flex items-center justify-between"
+                    className="p-6 rounded-2xl bg-white border border-slate-200 hover:border-blue-500 hover:bg-slate-50 transition cursor-pointer flex items-center justify-between shadow-sm hover:shadow-md animate-scale-up"
                   >
                     <div>
-                      <h4 className="text-sm font-sans font-bold text-white mb-1.5">{cat_opt}</h4>
-                      <p className="text-xs text-neutral-500 font-mono uppercase tracking-widest">{count} Available Pro</p>
+                      <h4 className="text-sm font-sans font-bold text-slate-805 mb-1.5">{cat_opt}</h4>
+                      <p className="text-xs text-slate-500 font-mono uppercase tracking-widest font-bold">{count} Available listings</p>
                     </div>
-                    <div className="p-2 bg-neutral-950 border border-neutral-800 text-amber-400 rounded-xl">
+                    <div className="p-2 bg-slate-100 border border-slate-200 text-blue-600 rounded-xl font-bold">
                       →
                     </div>
                   </div>
@@ -593,37 +593,37 @@ export default function App() {
         {currentView === 'search' && (
           <div className="space-y-6 animate-fade-in" id="view-search">
             <div>
-              <h2 className="text-2xl font-sans font-black text-white">Find Certified Specialists</h2>
-              <p className="text-xs text-neutral-450 mt-1">Refine your search parameters to pin-point artisans in your exact city and region.</p>
+              <h2 className="text-2xl font-sans font-black text-slate-800">Find Certified Specialists & Professionals</h2>
+              <p className="text-xs text-slate-500 mt-1 font-semibold">Refine your search parameters to pin-point technicians and service listings in your exact city and region.</p>
             </div>
 
             {/* Filter controls row */}
-            <div className="bg-neutral-900 border border-neutral-800 p-5 rounded-2xl space-y-4 shadow-xl" id="search-filters-card">
-              <div className="flex items-center gap-2 mb-2 text-xs uppercase font-mono font-bold text-amber-500 select-all">
+            <div className="bg-white border border-slate-200 p-5 rounded-2xl space-y-4 shadow-sm" id="search-filters-card">
+              <div className="flex items-center gap-2 mb-2 text-xs uppercase font-mono font-bold text-blue-600 select-all">
                 <Filter className="w-3.5 h-3.5" />
-                <span>Search filters Panel</span>
+                <span>Search Filters Panel</span>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 {/* Search Business Name */}
                 <div>
-                  <label className="text-[11px] text-neutral-450 font-medium block mb-1">Artisan Entity Name / Keyword</label>
+                  <label className="text-[11px] text-slate-500 font-bold block mb-1">Entity Name / Keyword</label>
                   <input
                     type="text"
                     placeholder="Search by keyword..."
                     value={searchName}
                     onChange={(e) => setSearchName(e.target.value)}
-                    className="w-full bg-neutral-950 border border-neutral-800 rounded-xl py-2 px-3.5 text-xs text-white focus:outline-none focus:border-amber-500"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl py-2 px-3.5 text-xs text-slate-800 focus:outline-none focus:border-blue-500 font-semibold"
                   />
                 </div>
 
                 {/* Categories filter */}
                 <div>
-                  <label className="text-[11px] text-neutral-450 font-medium block mb-1">Category Specialty</label>
+                  <label className="text-[11px] text-slate-500 font-bold block mb-1">Category Specialty</label>
                   <select
                     value={searchCategory}
                     onChange={(e) => setSearchCategory(e.target.value)}
-                    className="w-full bg-neutral-950 border border-neutral-800 rounded-xl py-2 px-3.5 text-xs text-neutral-300 focus:outline-none focus:border-amber-500"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl py-2 px-3.5 text-xs text-slate-800 focus:outline-none focus:border-blue-500 font-semibold cursor-pointer"
                   >
                     <option value="">All Categories</option>
                     {ARTISAN_CATEGORIES.map((p) => (
@@ -634,14 +634,14 @@ export default function App() {
 
                 {/* Region filter */}
                 <div>
-                  <label className="text-[11px] text-neutral-450 font-medium block mb-1">Region Location</label>
+                  <label className="text-[11px] text-slate-500 font-bold block mb-1">Region Location</label>
                   <select
                     value={searchRegion}
                     onChange={(e) => {
                       setSearchRegion(e.target.value);
                       setSearchCity('');
                     }}
-                    className="w-full bg-neutral-950 border border-neutral-800 rounded-xl py-2 px-3.5 text-xs text-neutral-300 focus:outline-none focus:border-amber-500"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl py-2 px-3.5 text-xs text-slate-800 focus:outline-none focus:border-blue-500 font-semibold cursor-pointer"
                   >
                     <option value="">All Regions</option>
                     {GHANA_REGIONS.map((r) => (
@@ -652,11 +652,11 @@ export default function App() {
 
                 {/* City filter */}
                 <div>
-                  <label className="text-[11px] text-neutral-450 font-medium block mb-1">City / Town</label>
+                  <label className="text-[11px] text-slate-500 font-bold block mb-1">City / Town</label>
                   <select
                     value={searchCity}
                     onChange={(e) => setSearchCity(e.target.value)}
-                    className="w-full bg-neutral-950 border border-neutral-800 rounded-xl py-2 px-3.5 text-xs text-neutral-300 focus:outline-none focus:border-amber-500"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl py-2 px-3.5 text-xs text-slate-800 focus:outline-none focus:border-blue-500 font-semibold cursor-pointer"
                     disabled={!searchRegion}
                   >
                     <option value="">All Cities</option>
@@ -677,27 +677,27 @@ export default function App() {
                     setSearchRegion('');
                     setSearchCity('');
                   }}
-                  className="px-4 py-1.5 rounded-lg border border-neutral-800 hover:border-neutral-700 bg-neutral-950 hover:bg-neutral-900 transition text-[10px] uppercase font-mono text-neutral-450"
+                  className="px-4 py-1.5 rounded-lg border border-slate-200 hover:border-slate-300 bg-white hover:bg-slate-50 transition text-[10px] uppercase font-mono text-slate-500 font-bold"
                 >
-                  Clear search Filters
+                  Clear Search Filters
                 </button>
               )}
             </div>
 
             {/* Total Results count */}
-            <div className="flex justify-between items-center text-xs text-neutral-450 px-2">
-              <span>Located <span className="text-amber-400 font-bold">{filteredArtisans.length}</span> verified results matching parameters</span>
+            <div className="flex justify-between items-center text-xs text-slate-500 px-2">
+              <span>Located <span className="text-blue-650 font-extrabold">{filteredArtisans.length}</span> verified results matching parameters</span>
             </div>
 
             {/* Results Grid List */}
             {filteredArtisans.length === 0 ? (
-              <div className="bg-neutral-900/40 border border-neutral-900 rounded-3xl p-16 text-center space-y-4">
-                <div className="w-12 h-12 rounded-full border border-neutral-800 flex items-center justify-center text-neutral-600 mx-auto">
+              <div className="bg-slate-100 border border-slate-200 rounded-3xl p-16 text-center space-y-4">
+                <div className="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 mx-auto bg-white">
                   <Search className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-white font-semibold text-sm">No Search Results Found</h4>
-                  <p className="text-xs text-neutral-500 px-12 mt-1 leading-relaxed">
+                  <h4 className="text-slate-800 font-black text-sm">No Search Results Found</h4>
+                  <p className="text-xs text-slate-550 px-12 mt-1 leading-relaxed font-medium">
                     Check your spelling or filter variables. We are expanding to Bono and Volta region communities shortly.
                   </p>
                 </div>
@@ -710,7 +710,7 @@ export default function App() {
                   return (
                     <div
                       key={artisan.id}
-                      className="bg-neutral-900 border border-neutral-800 hover:border-neutral-700 rounded-2xl overflow-hidden transition flex flex-col justify-between"
+                      className="bg-white border border-slate-200 hover:border-slate-300 rounded-2xl overflow-hidden transition flex flex-col justify-between shadow-sm hover:shadow-md animate-scale-up"
                     >
                       <div className="p-4.5 space-y-4">
                         <div className="flex items-start justify-between gap-3">
@@ -718,57 +718,57 @@ export default function App() {
                             <img
                               src={owner?.profile_image || 'https://images.unsplash.com/photo-1540569014015-19a7be504e3a'}
                               alt={owner?.full_name}
-                              className="w-10 h-10 rounded-xl object-cover shrink-0"
+                              className="w-10 h-10 rounded-xl object-cover shrink-0 border border-slate-100 shadow-xs"
                             />
                             <div>
-                              <h3 className="text-xs font-bold text-white flex items-center gap-1">
-                                <span className="hover:text-amber-400 transition cursor-pointer" onClick={() => handleNavigateToArtisan(artisan.id)}>
+                              <h3 className="text-xs font-extrabold text-slate-800 flex items-center gap-1">
+                                <span className="hover:text-blue-600 transition cursor-pointer" onClick={() => handleNavigateToArtisan(artisan.id)}>
                                   {artisan.business_name}
                                 </span>
                                 {artisan.verified && (
-                                  <CheckCircle className="w-3.5 h-3.5 text-emerald-400 shrink-0" title="Background and qualifications validated" />
+                                  <CheckCircle className="w-3.5 h-3.5 text-blue-600 shrink-0" title="Background and qualifications validated" />
                                 )}
                               </h3>
-                              <span className="text-[10px] text-amber-500 font-mono tracking-wider uppercase">{artisan.category}</span>
+                              <span className="text-[10px] text-blue-600 font-mono tracking-wider uppercase font-bold">{artisan.category}</span>
                             </div>
                           </div>
 
                           <button
                             onClick={() => toggleFavorite(artisan.id)}
-                            className="p-1.5 rounded-lg hover:bg-neutral-950"
+                            className="p-1.5 rounded-lg hover:bg-slate-50"
                             title={isSaved ? 'Remove Bookmarked Favorite' : 'Save Favorite'}
                           >
-                            <Heart className={`w-4 h-4 ${isSaved ? 'fill-red-500 text-red-500' : 'text-neutral-500 hover:text-red-400'}`} />
+                            <Heart className={`w-4 h-4 ${isSaved ? 'fill-red-500 text-red-500' : 'text-slate-400 hover:text-red-400'}`} />
                           </button>
                         </div>
 
-                        <p className="text-xs text-neutral-400 leading-relaxed font-normal line-clamp-3">
+                        <p className="text-xs text-slate-600 leading-relaxed font-normal line-clamp-3">
                           {artisan.description}
                         </p>
 
-                        <div className="flex flex-col gap-1.5 text-[10px] text-neutral-500">
+                        <div className="flex flex-col gap-1.5 text-[10px] text-slate-500 font-medium">
                           <div className="flex items-center gap-2">
-                            <MapPin className="w-3.5 h-3.5 text-amber-500" />
-                            <span>Digital Postal: <span className="text-neutral-300 uppercase">{artisan.gps_location}</span> • {artisan.city}, {artisan.region}</span>
+                            <MapPin className="w-3.5 h-3.5 text-blue-500" />
+                            <span>Digital Postal: <span className="text-slate-800 font-bold uppercase">{artisan.gps_location}</span> • {artisan.city}, {artisan.region}</span>
                           </div>
-                          <div className="flex items-center gap-2">
-                            <Clock className="w-3.5 h-3.5 text-amber-500" />
-                            <span>Years of Practical Work: <span className="text-neutral-300 font-bold">{artisan.years_experience} yrs</span></span>
+                          <div className="flex items-center gap-3">
+                            <Clock className="w-3.5 h-3.5 text-blue-500" />
+                            <span>Years of Experience: <span className="text-slate-800 font-black">{artisan.years_experience} yrs</span></span>
                           </div>
                         </div>
                       </div>
 
                       {/* Card Footer Rating & Link */}
-                      <div className="bg-neutral-950 p-4 border-t border-neutral-800/80 flex items-center justify-between">
+                      <div className="bg-slate-50 p-4 border-t border-slate-100/80 flex items-center justify-between">
                         <div className="flex items-center gap-1.5">
-                          <Star className="w-4 h-4 text-amber-400 fill-amber-400" />
-                          <span className="font-mono text-xs text-white font-bold">{artisan.average_rating.toFixed(1)}</span>
-                          <span className="text-[10px] text-neutral-500">({artisan.total_reviews} reviews)</span>
+                          <Star className="w-4 h-4 text-amber-500 fill-amber-400" />
+                          <span className="font-mono text-xs text-slate-700 font-bold">{artisan.average_rating.toFixed(1)}</span>
+                          <span className="text-[10px] text-slate-450">({artisan.total_reviews} reviews)</span>
                         </div>
 
                         <button
                           onClick={() => handleNavigateToArtisan(artisan.id)}
-                          className="px-3 py-1.5 bg-amber-400 hover:bg-amber-300 text-neutral-950 text-xs font-bold rounded-lg transition"
+                          className="px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-lg transition"
                         >
                           View Bio
                         </button>
@@ -786,7 +786,7 @@ export default function App() {
           <div className="space-y-8 animate-fade-in" id="view-artisan-detail">
             {(() => {
               const artisan = artisanProfiles.find((ap) => ap.id === selectedArtisanId);
-              if (!artisan) return <p className="text-xs text-neutral-500" id="detail-not-found">Artisan record lookup failure.</p>;
+              if (!artisan) return <p className="text-xs text-slate-500 animate-pulse" id="detail-not-found">Artisan record lookup failure.</p>;
               const owner = profiles.find((p) => p.id === artisan.user_id);
               const artisanServices = services.filter((s) => s.artisan_id === artisan.id);
               const artisanReviews = reviews.filter((r) => r.artisan_id === artisan.id);
@@ -800,82 +800,82 @@ export default function App() {
                   <div className="lg:col-span-2 space-y-8" id="detail-left-col">
                     
                     {/* Main banner cards */}
-                    <div className="bg-neutral-900 border border-neutral-800 p-6 rounded-3xl space-y-4">
+                    <div className="bg-white border border-slate-200 p-6 rounded-3xl space-y-4 shadow-sm">
                       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                         <div className="flex items-center gap-4">
                           <img
                             src={owner?.profile_image || 'https://images.unsplash.com/photo-1540569014015-19a7be504e3a'}
                             alt={owner?.full_name}
-                            className="w-16 h-16 rounded-2xl object-cover border border-neutral-800"
+                            className="w-16 h-16 rounded-2xl object-cover border border-slate-200 shadow-sm"
                           />
                           <div>
                             <div className="flex items-center gap-2">
-                              <h2 className="font-sans font-black text-xl text-white">{artisan.business_name}</h2>
+                              <h2 className="font-sans font-black text-xl text-slate-800">{artisan.business_name}</h2>
                               {artisan.verified && (
-                                <span className="flex items-center gap-1 text-[9px] font-semibold text-emerald-400 bg-emerald-400/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
+                                <span className="flex items-center gap-1 text-[9px] font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-full border border-blue-100">
                                   ✔ Verified
                                 </span>
                               )}
                             </div>
-                            <span className="text-xs text-amber-400 font-semibold">{artisan.category} Specialty</span>
-                            <p className="text-xs text-neutral-450 mt-1">Host: {owner?.full_name}</p>
+                            <span className="text-xs text-blue-600 font-bold">{artisan.category} Specialty</span>
+                            <p className="text-xs text-slate-550 mt-1 font-semibold">Host: {owner?.full_name}</p>
                           </div>
                         </div>
 
                         {/* Top Rating Display */}
-                        <div className="bg-neutral-950 p-4 rounded-xl border border-neutral-800 min-w-[120px] text-center">
-                          <div className="flex items-center justify-center text-amber-400 gap-1">
-                            <Star className="w-4 h-4 fill-amber-400" />
-                            <span className="font-mono text-md font-bold text-white">{artisan.average_rating.toFixed(1)}</span>
+                        <div className="bg-slate-50 p-4 rounded-xl border border-slate-150 min-w-[120px] text-center shadow-xs">
+                          <div className="flex items-center justify-center text-amber-500 gap-1">
+                            <Star className="w-4 h-4 fill-amber-400 text-amber-500" />
+                            <span className="font-mono text-md font-bold text-slate-800">{artisan.average_rating.toFixed(1)}</span>
                           </div>
-                          <span className="text-[10px] text-neutral-500 block mt-1">{artisan.total_reviews} direct reviews</span>
+                          <span className="text-[10px] text-slate-450 block mt-1 font-bold">{artisan.total_reviews} direct reviews</span>
                         </div>
                       </div>
 
                       <div className="space-y-2">
-                        <h3 className="text-white text-xs font-bold uppercase tracking-wider font-mono">Business Bio description</h3>
-                        <p className="text-xs text-neutral-400 leading-relaxed font-normal p-3 rounded-xl bg-neutral-950/40 border border-neutral-850">
+                        <h3 className="text-slate-800 text-xs font-black uppercase tracking-wider font-mono">Business Bio Description</h3>
+                        <p className="text-xs text-slate-650 leading-relaxed font-semibold p-3 rounded-xl bg-slate-50 border border-slate-100 shadow-xs">
                           {artisan.description}
                         </p>
                       </div>
 
                       {/* GPS & Area Info */}
                       <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-xs font-normal">
-                        <div className="bg-neutral-950/60 p-3 rounded-xl border border-neutral-800">
-                          <span className="text-neutral-500 text-[10px] uppercase font-mono block">Postal GPS Address</span>
-                          <span className="text-white font-mono font-bold uppercase mt-1 block">{artisan.gps_location}</span>
+                        <div className="bg-slate-50 p-3 rounded-xl border border-slate-150 shadow-xs">
+                          <span className="text-slate-500 text-[10px] uppercase font-bold block">Postal GPS Address</span>
+                          <span className="text-slate-800 font-mono font-black uppercase mt-1 block">{artisan.gps_location}</span>
                         </div>
-                        <div className="bg-neutral-950/60 p-3 rounded-xl border border-neutral-800">
-                          <span className="text-neutral-500 text-[10px] uppercase font-mono block">Regional State</span>
-                          <span className="text-white font-semibold mt-1 block">{artisan.city}, {artisan.region}</span>
+                        <div className="bg-slate-50 p-3 rounded-xl border border-slate-150 shadow-xs">
+                          <span className="text-slate-500 text-[10px] uppercase font-bold block">Regional State</span>
+                          <span className="text-slate-800 font-black mt-1 block">{artisan.city}, {artisan.region}</span>
                         </div>
-                        <div className="bg-neutral-950/60 p-3 rounded-xl border border-neutral-800 col-span-2 md:col-span-1">
-                          <span className="text-neutral-500 text-[10px] uppercase font-mono block">Practical Experience</span>
-                          <span className="text-white font-semibold mt-1 block">{artisan.years_experience} Years Verified</span>
+                        <div className="bg-slate-50 p-3 rounded-xl border border-slate-150 col-span-2 md:col-span-1 shadow-xs">
+                          <span className="text-slate-500 text-[10px] uppercase font-bold block">Practical Experience</span>
+                          <span className="text-slate-800 font-black mt-1 block">{artisan.years_experience} Years Verified</span>
                         </div>
                       </div>
                     </div>
 
                     {/* Services Offered list */}
-                    <div className="bg-neutral-900 border border-neutral-800 p-6 rounded-3xl space-y-4">
-                      <h3 className="text-white font-sans text-sm font-bold flex items-center gap-1.5">
+                    <div className="bg-white border border-slate-200 p-6 rounded-3xl space-y-4 shadow-sm">
+                      <h3 className="text-slate-800 font-sans text-sm font-extrabold flex items-center gap-1.5">
                         <Award className="w-5 h-5 text-amber-500" />
                         Bespoke Services Offers ({artisanServices.length})
                       </h3>
 
                       {artisanServices.length === 0 ? (
-                        <p className="text-xs text-neutral-500 leading-relaxed italic">No specific service packages configured yet.</p>
+                        <p className="text-xs text-slate-500 leading-relaxed italic font-bold">No specific service packages configured yet.</p>
                       ) : (
                         <div className="space-y-4">
                           {artisanServices.map((svc) => (
-                            <div key={svc.id} className="p-4 rounded-xl bg-neutral-950 border border-neutral-850 flex justify-between gap-4">
+                            <div key={svc.id} className="p-4 rounded-xl bg-slate-50 border border-slate-150 flex justify-between gap-4 shadow-xs">
                               <div>
-                                <h4 className="text-xs font-bold text-white mb-1">{svc.service_name}</h4>
-                                <p className="text-xs text-neutral-400 font-normal leading-relaxed">{svc.description}</p>
+                                <h4 className="text-xs font-bold text-slate-800 mb-1">{svc.service_name}</h4>
+                                <p className="text-xs text-slate-600 font-medium leading-relaxed">{svc.description}</p>
                               </div>
                               <div className="text-right shrink-0">
-                                <span className="text-[10px] text-neutral-500 uppercase font-mono block">Price Range</span>
-                                <span className="text-xs text-amber-400 font-bold font-mono block mt-1">{svc.price_range}</span>
+                                <span className="text-[10px] text-slate-450 uppercase font-mono block font-bold">Price Range</span>
+                                <span className="text-xs text-blue-600 font-black font-mono block mt-1">{svc.price_range}</span>
                               </div>
                             </div>
                           ))}
@@ -884,19 +884,19 @@ export default function App() {
                     </div>
 
                     {/* Portfolio Work projects */}
-                    <div className="bg-neutral-900 border border-neutral-800 p-6 rounded-3xl space-y-4">
-                      <h3 className="text-white font-sans text-sm font-bold flex items-center gap-1.5">
-                        <Image className="w-5 h-5 text-amber-500" />
+                    <div className="bg-white border border-slate-200 p-6 rounded-3xl space-y-4 shadow-sm">
+                      <h3 className="text-slate-800 font-sans text-sm font-extrabold flex items-center gap-1.5">
+                        <Image className="w-5 h-5 text-blue-500" />
                         Project Installation Gallery
                       </h3>
 
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         {portfolio.map((imgItem, idx) => (
-                          <div key={idx} className="bg-neutral-950 rounded-xl overflow-hidden border border-neutral-800">
+                          <div key={idx} className="bg-slate-50 rounded-xl overflow-hidden border border-slate-150 shadow-xs">
                             <img src={imgItem.img} alt={imgItem.title} className="w-full h-40 object-cover" />
                             <div className="p-3">
-                              <h4 className="text-xs font-bold text-white">{imgItem.title}</h4>
-                              <p className="text-[10px] text-neutral-500 mt-1">{imgItem.desc}</p>
+                              <h4 className="text-xs font-bold text-slate-800">{imgItem.title}</h4>
+                              <p className="text-[10px] text-slate-500 mt-1">{imgItem.desc}</p>
                             </div>
                           </div>
                         ))}
@@ -904,66 +904,66 @@ export default function App() {
                     </div>
 
                     {/* Reviews list */}
-                    <div className="bg-neutral-900 border border-neutral-800 p-6 rounded-3xl space-y-6">
-                      <h3 className="text-white font-sans text-sm font-bold flex items-center gap-1.5">
-                        <MessageSquare className="w-5 h-5 text-amber-500" />
+                    <div className="bg-white border border-slate-200 p-6 rounded-3xl space-y-6 shadow-sm">
+                      <h3 className="text-slate-800 font-sans text-sm font-extrabold flex items-center gap-1.5">
+                        <MessageSquare className="w-5 h-5 text-blue-500" />
                         Client Evaluations Feed ({artisanReviews.length})
                       </h3>
 
                       {artisanReviews.length === 0 ? (
-                        <p className="text-xs text-neutral-500 italic">No ratings published yet. Be the first to review this artisan!</p>
+                        <p className="text-xs text-slate-550 italic font-medium">No ratings published yet. Be the first to review this artisan!</p>
                       ) : (
                         <div className="space-y-4">
                           {artisanReviews.map((rev) => (
-                            <div key={rev.id} className="p-4 rounded-xl bg-neutral-950 border border-neutral-800/80 leading-relaxed font-normal">
+                            <div key={rev.id} className="p-4 rounded-xl bg-slate-50 border border-slate-150 leading-relaxed font-semibold shadow-xs">
                               <div className="flex items-center justify-between mb-2">
                                 <div className="flex items-center gap-2">
-                                  <div className="w-8 h-8 rounded-full bg-amber-400/10 flex items-center justify-center text-amber-400 text-xs font-mono font-bold uppercase">
+                                  <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 text-xs font-mono font-bold uppercase border border-blue-100">
                                     {rev.customer_name.slice(0, 2)}
                                   </div>
                                   <div>
-                                    <h4 className="text-xs font-bold text-white">{rev.customer_name}</h4>
-                                    <span className="text-[9px] text-neutral-600 block">{new Date(rev.created_at).toLocaleDateString()}</span>
+                                    <h4 className="text-xs font-bold text-slate-800">{rev.customer_name}</h4>
+                                    <span className="text-[9px] text-slate-400 block">{new Date(rev.created_at).toLocaleDateString()}</span>
                                   </div>
                                 </div>
 
-                                <div className="flex text-amber-450 text-amber-400 gap-0.5" title={`${rev.rating}/5 stars`}>
+                                <div className="flex text-amber-500 gap-0.5" title={`${rev.rating}/5 stars`}>
                                   {Array.from({ length: 5 }).map((_, i) => (
-                                    <Star key={i} className={`w-3.5 h-3.5 ${i < rev.rating ? 'fill-amber-400 text-amber-400' : 'text-neutral-800'}`} />
+                                    <Star key={i} className={`w-3.5 h-3.5 ${i < rev.rating ? 'fill-amber-400 text-amber-500' : 'text-slate-200'}`} />
                                   ))}
                                 </div>
                               </div>
-                              <p className="text-xs text-neutral-400 italic">"{rev.comment}"</p>
+                              <p className="text-xs text-slate-600 italic">"{rev.comment}"</p>
                             </div>
                           ))}
                         </div>
                       )}
 
                       {/* Rating submission form */}
-                      <form onSubmit={(e) => handleSubmitReview(e, artisan.id)} className="p-4 rounded-2xl bg-neutral-950 border border-neutral-850 space-y-4">
-                        <h4 className="text-xs font-bold uppercase tracking-wider text-amber-400 flex items-center gap-1">
-                          <Sparkles className="w-4 h-4 text-amber-300 animate-pulse" />
-                          Submit Client Assessment rating
+                      <form onSubmit={(e) => handleSubmitReview(e, artisan.id)} className="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-4">
+                        <h4 className="text-xs font-extrabold uppercase tracking-wider text-blue-600 flex items-center gap-1">
+                          <Sparkles className="w-4 h-4 text-blue-500 animate-pulse" />
+                          Submit Client Assessment Rating
                         </h4>
 
                         {!currentUser ? (
                           <div className="text-center py-2 space-y-2">
-                            <p className="text-[11px] text-neutral-500">You must be logged in as a registered customer to post score reviews.</p>
+                            <p className="text-[11px] text-slate-550 font-bold">You must be logged in as a registered customer to post score reviews.</p>
                             <button
                               type="button"
                               onClick={() => setAuthModalOpen(true)}
-                              className="px-4 py-1.5 bg-amber-400 hover:bg-amber-300 text-neutral-950 text-xs font-semibold rounded-lg"
+                              className="px-4 py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-lg"
                             >
                               Sign In and Post Review
                             </button>
                           </div>
                         ) : currentUser.role !== 'customer' ? (
-                          <p className="text-[11px] text-neutral-500 leading-relaxed italic">Only clients are eligible to leave comments on local contractors.</p>
+                          <p className="text-[11px] text-slate-500 leading-relaxed italic font-semibold">Only clients are eligible to leave comments on local contractors.</p>
                         ) : (
                           <div className="space-y-4">
                             <div className="flex items-center gap-3">
-                              <span className="text-xs text-neutral-400">Score Assessment:</span>
-                              <div className="flex items-center gap-1 text-md">
+                              <span className="text-xs text-slate-650 font-bold">Score Assessment:</span>
+                              <div className="flex items-center gap-1 text-md bg-white p-1.5 rounded-xl border border-slate-150">
                                 {[1, 2, 3, 4, 5].map((num) => (
                                   <button
                                     type="button"
@@ -973,7 +973,7 @@ export default function App() {
                                   >
                                     <Star
                                       className={`w-6 h-6 ${
-                                        num <= newRating ? 'text-amber-400 fill-amber-400' : 'text-neutral-800'
+                                        num <= newRating ? 'text-amber-500 fill-amber-400' : 'text-slate-200'
                                       }`}
                                     />
                                   </button>
@@ -982,20 +982,20 @@ export default function App() {
                             </div>
 
                             <div>
-                              <label className="text-xs text-neutral-400 font-medium block mb-1">Your Detailed Experience Comment</label>
+                              <label className="text-xs text-slate-550 font-bold block mb-1">Your Detailed Experience Comment</label>
                               <textarea
                                 required
                                 rows={3}
                                 placeholder="Explain details about their timing, response, skills, cleaner cleanup, and general friendliness..."
                                 value={newComment}
                                 onChange={(e) => setNewComment(e.target.value)}
-                                className="w-full bg-neutral-900 border border-neutral-800 rounded-lg p-3 text-xs text-white focus:outline-none focus:border-amber-500"
+                                className="w-full bg-white border border-slate-200 rounded-lg p-3 text-xs text-slate-800 focus:outline-none focus:border-blue-500 font-semibold"
                               />
                             </div>
 
                             <button
                               type="submit"
-                              className="py-1.5 px-4 bg-amber-400 hover:bg-amber-300 text-neutral-950 text-xs font-bold rounded-lg uppercase tracking-wide transition"
+                              className="py-1.5 px-4 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-lg uppercase tracking-wide transition cursor-pointer"
                             >
                               Approve Rating Comment
                             </button>
@@ -1007,64 +1007,64 @@ export default function App() {
 
                   {/* Right Column (WhatsApp / call booking slider card) */}
                   <div className="space-y-6" id="detail-right-col">
-                    <div className="bg-neutral-900 border border-neutral-800 p-6 rounded-3xl space-y-4 sticky top-24">
+                    <div className="bg-white border border-slate-200 p-6 rounded-3xl space-y-4 sticky top-24 shadow-sm">
                       <div className="space-y-1">
-                        <span className="text-[9px] uppercase font-bold text-amber-400 font-mono tracking-widest block uppercase">Direct Client Contact Card</span>
-                        <h3 className="text-white font-sans text-sm font-bold">Contact {owner?.full_name}</h3>
+                        <span className="text-[9px] uppercase font-bold text-blue-600 font-mono tracking-widest block">Direct Client Contact Card</span>
+                        <h3 className="text-slate-800 font-sans text-sm font-extrabold">Contact {owner?.full_name}</h3>
                       </div>
 
                       <div className="space-y-3">
-                        <div className="p-3 bg-neutral-950 rounded-xl border border-neutral-850 flex items-center justify-between">
+                        <div className="p-3 bg-slate-50 rounded-xl border border-slate-150 flex items-center justify-between shadow-xs">
                           <div>
-                            <span className="text-[9px] text-neutral-500 font-mono block">Direct Helpline Phone</span>
-                            <span className="text-xs font-bold text-white select-all mt-1 block">{owner?.phone || '+233 24 123 4567'}</span>
+                            <span className="text-[9px] text-slate-450 font-mono block font-bold">Direct Phone Number</span>
+                            <span className="text-xs font-black text-slate-800 select-all mt-1 block">{owner?.phone || '+233 24 123 4567'}</span>
                           </div>
-                          <span className="text-[9px] bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded-full font-bold uppercase tracking-wide">Call Direct</span>
+                          <span className="text-[9px] bg-emerald-50 text-emerald-600 px-2 py-0.5 rounded-full font-bold uppercase tracking-wide border border-emerald-100">Call Direct</span>
                         </div>
 
-                        <div className="p-3 bg-neutral-950 rounded-xl border border-neutral-850 flex items-center justify-between">
+                        <div className="p-3 bg-slate-50 rounded-xl border border-slate-150 flex items-center justify-between shadow-xs">
                           <div>
-                            <span className="text-[9px] text-neutral-500 font-mono block">GhanaPost Digital Code</span>
-                            <span className="text-xs font-mono font-bold text-white uppercase mt-1 block">{artisan.gps_location}</span>
+                            <span className="text-[9px] text-slate-450 font-mono block font-bold">GhanaPost Digital Code</span>
+                            <span className="text-xs font-mono font-black text-slate-800 uppercase mt-1 block">{artisan.gps_location}</span>
                           </div>
-                          <span className="text-[9px] bg-amber-400/10 text-amber-400 px-2 py-0.5 rounded-full uppercase tracking-wide font-medium">GPS checked</span>
+                          <span className="text-[9px] bg-blue-50 text-blue-600 px-2 py-0.5 rounded-full uppercase tracking-wide font-bold border border-blue-100">GPS Checked</span>
                         </div>
                       </div>
 
                       {/* Form initiate connection */}
-                      <form onSubmit={(e) => handleContactArtisan(e, artisan.id)} className="p-4 rounded-xl bg-neutral-950/60 border border-neutral-850 space-y-4">
-                        <h4 className="text-xs font-bold text-white flex items-center gap-1">
-                          <Clock className="w-3.5 h-3.5 text-amber-500" />
+                      <form onSubmit={(e) => handleContactArtisan(e, artisan.id)} className="p-4 rounded-xl bg-slate-50 border border-slate-205 space-y-4 shadow-xs">
+                        <h4 className="text-xs font-bold text-slate-800 flex items-center gap-1">
+                          <Clock className="w-3.5 h-3.5 text-blue-500" />
                           Simulate SMS Dispatch
                         </h4>
                         
                         <div>
-                          <label className="text-[10px] text-neutral-400 font-medium block mb-1">Your Mobile Phone Contact</label>
+                          <label className="text-[10px] text-slate-500 font-bold block mb-1">Your Mobile Phone Contact</label>
                           <input
                             required
                             type="tel"
                             placeholder="+233 24 000 0000"
                             value={contactPhone}
                             onChange={(e) => setContactPhone(e.target.value)}
-                            className="w-full bg-neutral-950 border border-neutral-850 rounded-lg py-1.5 px-3 text-xs text-white focus:outline-none focus:border-amber-500"
+                            className="w-full bg-white border border-slate-200 rounded-lg py-1.5 px-3 text-xs text-slate-800 focus:outline-none focus:border-blue-500 font-semibold"
                           />
                         </div>
 
                         <div>
-                          <label className="text-[10px] text-neutral-400 font-medium block mb-1">Short inquiry message description</label>
+                          <label className="text-[10px] text-slate-500 font-bold block mb-1">Short Inquiry Message Description</label>
                           <textarea
                             required
                             rows={3}
                             placeholder="e.g. Please wire a main switchboard in Spintex..."
                             value={contactMessage}
                             onChange={(e) => setContactMessage(e.target.value)}
-                            className="w-full bg-neutral-950 border border-neutral-850 rounded-lg p-2.5 text-xs text-white focus:outline-none focus:border-amber-500"
+                            className="w-full bg-white border border-slate-200 rounded-lg p-2.5 text-xs text-slate-800 focus:outline-none focus:border-blue-500 font-semibold"
                           />
                         </div>
 
                         <button
                           type="submit"
-                          className="w-full py-2 bg-amber-400 hover:bg-amber-300 text-neutral-950 text-xs font-bold rounded-lg uppercase tracking-wide transition flex items-center justify-center gap-1.5"
+                          className="w-full py-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-lg uppercase tracking-wide transition flex items-center justify-center gap-1.5 cursor-pointer shadow-sm"
                         >
                           <MessageCircle className="w-4 h-4" />
                           Transmit Secure SMS
@@ -1076,10 +1076,10 @@ export default function App() {
                         href={`https://wa.me/${owner?.phone?.replace(/\s+/g, '') || '233244123456'}`}
                         target="_blank"
                         rel="noreferrer"
-                        className="w-full py-2 px-4 rounded-xl border border-neutral-800 hover:border-emerald-500/20 text-xs text-neutral-400 hover:text-emerald-400 font-bold transition flex items-center justify-center gap-2"
+                        className="w-full py-2 px-4 rounded-xl border border-slate-200 hover:border-emerald-500/20 text-xs text-slate-600 hover:text-emerald-600 font-bold bg-white hover:bg-slate-50 transition flex items-center justify-center gap-2 shadow-xs"
                       >
-                        <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
-                        <span>Open WhatsApp Direct Callback</span>
+                        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                        <span>Open WhatsApp Callback</span>
                       </a>
                     </div>
                   </div>
@@ -1093,31 +1093,31 @@ export default function App() {
         {currentView === 'pricing' && (
           <div className="space-y-8 animate-fade-in" id="view-pricing">
             <div className="text-center max-w-xl mx-auto space-y-2">
-              <h2 className="text-3xl font-black text-white leading-tight">Ghana's Highest-Yield Lead Engine</h2>
-              <p className="text-xs text-neutral-450">List your craft inside Ghana's safest digital web directory. Elevating service quality across regional cities.</p>
+              <h2 className="text-3xl font-black text-slate-805 leading-tight">Ghana's Highest-Yield Lead Engine</h2>
+              <p className="text-xs text-slate-500 font-semibold">List your services inside the safest digital directory. Elevating service quality across regional cities.</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto" id="pricing-matrix">
               {/* Box Basic */}
-              <div className="p-6 rounded-3xl bg-neutral-900 border border-neutral-800 flex flex-col justify-between">
+              <div className="p-6 rounded-3xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
                 <div>
-                  <span className="text-[9px] uppercase font-bold text-neutral-500 font-mono block">Standard Directory Plan</span>
-                  <h3 className="text-lg font-bold text-white mt-1">Free Tier</h3>
-                  <p className="text-xs text-neutral-500 mt-2">Perfect for young apprentices beginning to log service reputations in Accra.</p>
+                  <span className="text-[9px] uppercase font-bold text-slate-400 font-mono block">Standard Directory Plan</span>
+                  <h3 className="text-lg font-extrabold text-slate-800 mt-1">Free Tier</h3>
+                  <p className="text-xs text-slate-500 mt-2">Perfect for young apprentices beginning to log service reputations in Accra.</p>
                   
                   <div className="flex items-baseline gap-1 mt-4">
-                    <span className="text-2xl font-black text-white">GH₵ 0</span>
-                    <span className="text-xs text-neutral-500">/ forever</span>
+                    <span className="text-2xl font-black text-slate-850">GH₵ 0</span>
+                    <span className="text-xs text-slate-450">/ forever</span>
                   </div>
 
-                  <hr className="border-neutral-850 my-6" />
+                  <hr className="border-slate-100 my-6" />
 
-                  <ul className="space-y-3.5 text-xs text-neutral-400">
+                  <ul className="space-y-3.5 text-xs text-slate-600 font-medium">
                     <li className="flex items-center gap-2">✔ List up to 3 services package offers</li>
                     <li className="flex items-center gap-2">✔ Standard category directory display</li>
-                    <li className="flex items-center gap-2">✔ Recieve cliente reviews</li>
-                    <li className="flex items-center gap-2 text-neutral-600">✘ Prioritized Search placement</li>
-                    <li className="flex items-center gap-2 text-neutral-600">✘ Pro verified system badge</li>
+                    <li className="flex items-center gap-2">✔ Receive customer reviews</li>
+                    <li className="flex items-center gap-2 text-slate-350 line-through">✘ Prioritized Search placement</li>
+                    <li className="flex items-center gap-2 text-slate-350 line-through">✘ Pro verified system badge</li>
                   </ul>
                 </div>
 
@@ -1130,31 +1130,31 @@ export default function App() {
                       setAuthModalOpen(true);
                     }
                   }}
-                  className="w-full mt-8 py-2.5 rounded-xl border border-neutral-800 bg-neutral-950 hover:bg-neutral-900 text-xs text-neutral-400 uppercase tracking-wide font-bold transition"
+                  className="w-full mt-8 py-2.5 rounded-xl border border-slate-200 bg-slate-50 hover:bg-slate-100 text-xs text-slate-600 uppercase tracking-wide font-bold transition cursor-pointer"
                 >
                   Join standard listing
                 </button>
               </div>
 
               {/* Box Premium */}
-              <div className="p-6 rounded-3xl bg-gradient-to-br from-neutral-900 via-neutral-950 to-neutral-900 border-2 border-amber-500/30 flex flex-col justify-between relative shadow-2xl">
-                <span className="absolute top-3.5 right-3.5 text-[9px] bg-amber-400/10 text-amber-400 font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Top Recommendation</span>
+              <div className="p-6 rounded-3xl bg-white border-2 border-blue-500 flex flex-col justify-between relative shadow-md">
+                <span className="absolute top-3.5 right-3.5 text-[9px] bg-blue-50 text-blue-600 font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider border border-blue-100">Top Recommendation</span>
                 <div>
-                  <span className="text-[9px] uppercase font-mono font-bold text-amber-400 tracking-wider block">Local Pro Artisans</span>
-                  <h3 className="text-lg font-bold text-white mt-1">Premium plan</h3>
-                  <p className="text-xs text-neutral-400 mt-2">Excellent package for independent engineers and contractors wishing to receive instant call leads.</p>
+                  <span className="text-[9px] uppercase font-mono font-bold text-blue-600 tracking-wider block">Local Pro Artisans</span>
+                  <h3 className="text-lg font-extrabold text-slate-800 mt-1">Premium plan</h3>
+                  <p className="text-xs text-slate-600 mt-2 font-medium">Excellent package for independent engineers and contractors wishing to receive instant call leads.</p>
                   
                   <div className="flex items-baseline gap-1 mt-4">
-                    <span className="text-3xl font-black text-amber-400">GH₵ 50</span>
-                    <span className="text-xs text-neutral-500">/ month</span>
+                    <span className="text-3xl font-black text-blue-600 animate-scale-up">GH₵ 50</span>
+                    <span className="text-xs text-slate-450">/ month</span>
                   </div>
 
-                  <hr className="border-neutral-800 my-6" />
+                  <hr className="border-slate-100 my-6" />
 
-                  <ul className="space-y-3.5 text-xs text-neutral-300">
+                  <ul className="space-y-3.5 text-xs text-slate-700 font-semibold">
                     <li className="flex items-center gap-2">✔ Unlimited Services Package configurations</li>
-                    <li className="flex items-center gap-2">✔ Priority Featured Placement above free results</li>
-                    <li className="flex items-center gap-2">✔ Pro Verified Green safety badge privileges</li>
+                    <li className="flex items-center gap-2 text-blue-600">✔ Priority Featured Placement above free results</li>
+                    <li className="flex items-center gap-2 text-blue-600">✔ Pro Verified Safety Badge privileges</li>
                     <li className="flex items-center gap-2">✔ Immediate Mobile Money / Telecel Cash checkout</li>
                   </ul>
                 </div>
@@ -1168,27 +1168,27 @@ export default function App() {
                       setAuthModalOpen(true);
                     }
                   }}
-                  className="w-full mt-8 py-3 bg-amber-400 hover:bg-amber-300 text-neutral-950 font-sans font-bold text-xs uppercase tracking-wider rounded-xl transition shadow-lg shadow-amber-400/5 cursor-pointer"
+                  className="w-full mt-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-sans font-bold text-xs uppercase tracking-wider rounded-xl transition shadow-md shadow-blue-50/20 cursor-pointer"
                 >
                   Activate with Mobile Money
                 </button>
               </div>
 
               {/* Box Enterprise */}
-              <div className="p-6 rounded-3xl bg-neutral-900 border border-neutral-800 flex flex-col justify-between">
+              <div className="p-6 rounded-3xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
                 <div>
-                  <span className="text-[9px] uppercase font-bold text-purple-400 font-mono block font-semibold">Contractor Hub Bundle</span>
-                  <h3 className="text-lg font-bold text-white mt-1">Enterprise Plan</h3>
-                  <p className="text-xs text-neutral-500 mt-2">Bespoke technical agencies, engineering networks, and registered companies in Ghana.</p>
+                  <span className="text-[9px] uppercase font-bold text-purple-600 font-mono block">Contractor Hub Bundle</span>
+                  <h3 className="text-lg font-extrabold text-slate-800 mt-1">Enterprise Plan</h3>
+                  <p className="text-xs text-slate-500 mt-2">Bespoke technical agencies, engineering networks, and registered companies in Ghana.</p>
                   
                   <div className="flex items-baseline gap-1 mt-4">
-                    <span className="text-2xl font-black text-purple-400">GH₵ 120</span>
-                    <span className="text-xs text-neutral-500">/ month</span>
+                    <span className="text-2xl font-black text-purple-650">GH₵ 120</span>
+                    <span className="text-xs text-slate-450">/ month</span>
                   </div>
 
-                  <hr className="border-neutral-850 my-6" />
+                  <hr className="border-slate-100 my-6" />
 
-                  <ul className="space-y-3.5 text-xs text-neutral-400">
+                  <ul className="space-y-3.5 text-xs text-slate-600 font-medium">
                     <li className="flex items-center gap-2">✔ Multi-profile linking on single workspace</li>
                     <li className="flex items-center gap-2">✔ Top-tier corporate placement priority</li>
                     <li className="flex items-center gap-2">✔ Direct digital SMS alert automation system</li>
@@ -1205,7 +1205,7 @@ export default function App() {
                       setAuthModalOpen(true);
                     }
                   }}
-                  className="w-full mt-8 py-2.5 rounded-xl border border-neutral-800 bg-neutral-950 hover:bg-neutral-900 text-xs text-neutral-300 uppercase tracking-wide font-bold transition cursor-pointer"
+                  className="w-full mt-8 py-2.5 rounded-xl border border-slate-200 bg-slate-50 hover:bg-slate-100 text-xs text-slate-600 uppercase tracking-wide font-bold transition cursor-pointer"
                 >
                   Initiate MoMo Checkout
                 </button>
@@ -1218,21 +1218,21 @@ export default function App() {
         {currentView === 'dashboard' && (
           <div className="space-y-6 animate-fade-in" id="view-dashboard">
             {!currentUser ? (
-              <div className="max-w-md mx-auto p-8 rounded-3xl bg-neutral-900 border border-neutral-800 text-center space-y-4">
-                <div className="w-12 h-12 rounded-full bg-amber-400/10 border border-amber-400/20 flex items-center justify-center text-amber-400 mx-auto">
+              <div className="max-w-md mx-auto p-8 rounded-3xl bg-white border border-slate-200 text-center space-y-4 shadow-sm">
+                <div className="w-12 h-12 rounded-full bg-blue-50 border border-blue-105 flex items-center justify-center text-blue-600 mx-auto">
                   <User className="w-5 h-5 font-bold" />
                 </div>
                 <div>
-                  <h3 className="text-white font-sans font-black text-md">Authenticate Dashboard Hub</h3>
-                  <p className="text-xs text-neutral-500 px-6 mt-1 leading-relaxed">
+                  <h3 className="text-slate-800 font-sans font-black text-md">Authenticate Dashboard Hub</h3>
+                  <p className="text-xs text-slate-500 px-6 mt-1 leading-relaxed font-semibold">
                     Verify account status. Log in to access services list, edit credentials, or check review ratings.
                   </p>
                 </div>
                 <button
                   onClick={() => setAuthModalOpen(true)}
-                  className="px-6 py-2.5 bg-amber-400 hover:bg-amber-300 text-neutral-950 text-xs font-bold rounded-xl uppercase tracking-wider transition shadow-sm"
+                  className="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-xl uppercase tracking-wider transition shadow-sm cursor-pointer"
                 >
-                  Sign In to LocalServer
+                  Sign In to locateMe Ghana
                 </button>
               </div>
             ) : currentUser.role === 'admin' ? (
@@ -1255,7 +1255,7 @@ export default function App() {
                 reviews={reviews}
                 subscriptions={subscriptions}
                 onTriggerMomo={handleTriggerMomo}
-                onUpdateArtisanProfile={handleUpdateArtisanProfile}
+                onUpdateProfile={handleUpdateArtisanProfile}
                 onAddService={handleAddService}
                 onDeleteService={handleDeleteService}
               />
@@ -1278,27 +1278,27 @@ export default function App() {
           <div className="space-y-8 animate-fade-in" id="view-sql">
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div>
-                <h2 className="text-2xl font-black text-white flex items-center gap-2">
-                  <Code className="w-6 h-6 text-amber-500" />
+                <h2 className="text-2xl font-black text-slate-800 flex items-center gap-2">
+                  <Code className="w-6 h-6 text-blue-600" />
                   Supabase & Local PostgreSQL Blueprint
                 </h2>
-                <p className="text-xs text-neutral-450 mt-1">Deploy production-ready schemas, triggers, and precise Row Level Security (RLS) policies directly into Supabase SQL editor.</p>
+                <p className="text-xs text-slate-500 font-semibold mt-1">Deploy production-ready schemas, triggers, and precise Row Level Security (RLS) policies directly into Supabase SQL editor.</p>
               </div>
 
               {/* Action Buttons */}
               <button
                 onClick={handleCopySql}
-                className="px-4 py-2 bg-amber-400 hover:bg-amber-300 text-neutral-950 font-bold text-xs uppercase transition tracking-wider rounded-lg flex items-center gap-1.5 shrink-0 shadow-sm"
+                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs uppercase transition tracking-wider rounded-lg flex items-center gap-1.5 shrink-0 shadow-sm cursor-pointer"
               >
                 {copiedSql ? (
                   <>
-                    <Check className="w-4 h-4 text-neutral-950" />
+                    <Check className="w-4 h-4 text-white" />
                     <span>Copied standard SQL</span>
                   </>
                 ) : (
                   <>
-                    <Copy className="w-4 h-4 text-neutral-950" />
-                    <span>Copy PostGreSQL Schema SQL</span>
+                    <Copy className="w-4 h-4 text-white" />
+                    <span>Copy PostgreSQL Schema SQL</span>
                   </>
                 )}
               </button>
@@ -1307,43 +1307,43 @@ export default function App() {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {/* Right Column (Instructions MD) */}
               <div className="lg:col-span-1 space-y-6" id="sql-guide">
-                <div className="bg-neutral-900 border border-neutral-850 p-6 rounded-3xl space-y-4">
-                  <h3 className="text-white font-sans text-xs font-bold uppercase tracking-wider text-amber-400 flex items-center gap-1">
+                <div className="bg-white border border-slate-205 shadow-sm p-6 rounded-3xl space-y-4">
+                  <h3 className="text-blue-600 font-sans text-xs font-black uppercase tracking-wider flex items-center gap-1">
                     <AlertCircle className="w-4 h-4" />
                     Setup Steps Guide
                   </h3>
                   
-                  <div className="text-xs text-neutral-350 leading-relaxed space-y-4 font-normal">
+                  <div className="text-xs text-slate-600 leading-relaxed space-y-4 font-semibold">
                     <div className="space-y-1">
-                      <span className="font-bold text-white block">1. Run SQL Editor In Supabase</span>
-                      <p className="text-neutral-400 text-[11px]">Copy the complete database code block and run it. It configures profiles, artisan columns, ratings recalculations triggers, and Row Level Security permissions.</p>
+                      <span className="font-extrabold text-slate-800 block">1. Run SQL Editor In Supabase</span>
+                      <p className="text-slate-500 text-[11px] font-medium">Copy the complete database code block and run it. It configures profiles, artisan columns, ratings recalculations triggers, and Row Level Security permissions.</p>
                     </div>
                     <div className="space-y-1">
-                      <span className="font-bold text-white block">2. Hook Environment Client Secrets</span>
-                      <p className="text-neutral-400 text-[11px]">Enter public environment keys inside your Vercel hosting provider dashboard or configure local .env secrets file.</p>
+                      <span className="font-extrabold text-slate-800 block">2. Hook Environment Client Secrets</span>
+                      <p className="text-slate-500 text-[11px] font-medium">Enter public environment keys inside your Vercel hosting provider dashboard or configure local .env secrets file.</p>
                     </div>
                     <div className="space-y-1">
-                      <span className="font-bold text-white block">3. Establish Portfolios Storage Bag</span>
-                      <p className="text-neutral-400 text-[11px]">Set up a Public bucket inside Supabase storage and configure rules allowing write permits to profile with role "artisan".</p>
+                      <span className="font-extrabold text-slate-800 block">3. Establish Portfolios Storage Bag</span>
+                      <p className="text-slate-500 text-[11px] font-medium">Set up a Public bucket inside Supabase storage and configure rules allowing write permits to profile with role "artisan".</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Database Abstraction Specs Card */}
-                <div className="bg-neutral-900 border border-neutral-850 p-6 rounded-3xl space-y-4 text-xs font-normal">
-                  <h3 className="text-white font-sans text-xs font-bold uppercase tracking-wider text-amber-400">Abstraction Specifications</h3>
-                  <div className="space-y-2 text-neutral-300 leading-relaxed">
-                    <div className="p-2 bg-neutral-950 border border-neutral-800 rounded flex justify-between">
-                      <span className="text-neutral-500">Database Engine:</span>
-                      <span className="font-mono font-bold text-white">PostgreSQL 15</span>
+                <div className="bg-white border border-slate-200 shadow-sm p-6 rounded-3xl space-y-4 text-xs font-normal">
+                  <h3 className="text-slate-800 font-sans text-xs font-black uppercase tracking-wider text-blue-600">Abstraction Specifications</h3>
+                  <div className="space-y-2 text-slate-600 leading-relaxed font-semibold">
+                    <div className="p-2 bg-slate-50 border border-slate-150 rounded flex justify-between">
+                      <span className="text-slate-500">Database Engine:</span>
+                      <span className="font-mono font-bold text-slate-800">PostgreSQL 15</span>
                     </div>
-                    <div className="p-2 bg-neutral-950 border border-neutral-800 rounded flex justify-between">
-                      <span className="text-neutral-500">Security:</span>
-                      <span className="font-mono font-bold text-emerald-400">Row Level Security</span>
+                    <div className="p-2 bg-slate-50 border border-slate-150 rounded flex justify-between">
+                      <span className="text-slate-500">Security:</span>
+                      <span className="font-mono font-bold text-blue-600">Row Level Security</span>
                     </div>
-                    <div className="p-2 bg-neutral-950 border border-neutral-800 rounded flex justify-between">
-                      <span className="text-neutral-500">Payment API:</span>
-                      <span className="font-mono font-bold text-amber-400">Paystack GHS</span>
+                    <div className="p-2 bg-slate-50 border border-slate-150 rounded flex justify-between">
+                      <span className="text-slate-500">Payment API:</span>
+                      <span className="font-mono font-bold text-blue-600 font-black">Paystack GHS</span>
                     </div>
                   </div>
                 </div>
@@ -1351,18 +1351,18 @@ export default function App() {
 
               {/* Left Column Code Display */}
               <div className="lg:col-span-2 space-y-4" id="sql-code-renderer">
-                <div className="bg-neutral-950 border border-neutral-800 p-6 rounded-3xl relative">
+                <div className="bg-white border border-slate-200 shadow-sm p-6 rounded-3xl relative">
                   <div className="absolute right-4 top-4 flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 font-bold rounded-full bg-amber-400"></span>
-                    <span className="text-[10px] text-neutral-500 font-mono">SUPABASE_POSTGRES_COMPLIANT.sql</span>
+                    <span className="w-2.5 h-2.5 font-bold rounded-full bg-blue-500 animate-pulse"></span>
+                    <span className="text-[10px] text-slate-400 font-mono font-bold">SUPABASE_POSTGRES_COMPLIANT.sql</span>
                   </div>
 
-                  <h3 className="text-white font-sans text-xs font-bold uppercase tracking-wider text-neutral-450 mb-4 flex items-center gap-1.5">
-                    <FileText className="w-4 h-4 text-neutral-500" />
+                  <h3 className="text-slate-800 font-sans text-xs font-black uppercase tracking-wider text-slate-500 mb-4 flex items-center gap-1.5">
+                    <FileText className="w-4 h-4 text-slate-450" />
                     Artisans Database Tables Schemas & Triggers SQL
                   </h3>
 
-                  <pre className="text-[11px] font-mono text-neutral-400 bg-neutral-900/60 p-4 rounded-xl max-h-[50vh] overflow-auto border border-neutral-850 scrollbar-thin scrollbar-thumb-neutral-800">
+                  <pre className="text-[11px] font-mono text-slate-700 bg-slate-50 p-4 rounded-xl max-h-[50vh] overflow-auto border border-slate-150 scrollbar-thin scrollbar-thumb-slate-300">
                     <code>{SUPABASE_SQL_SCHEMA}</code>
                   </pre>
                 </div>
