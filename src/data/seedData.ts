@@ -1,0 +1,323 @@
+import { Profile, ArtisanProfile, Service, Review, Subscription } from '../types';
+
+export const INITIAL_PROFILES: Profile[] = [
+  {
+    id: 'user-artisan-1',
+    role: 'artisan',
+    full_name: 'Emmanuel Osei',
+    phone: '+233 24 412 3456',
+    location: 'East Legon, Accra',
+    profile_image: 'https://images.unsplash.com/photo-1540569014015-19a7be504e3a?auto=format&fit=crop&w=300&q=80',
+    created_at: '2026-01-15T10:00:00Z',
+  },
+  {
+    id: 'user-artisan-2',
+    role: 'artisan',
+    full_name: 'Kofi Mensah',
+    phone: '+233 20 876 5432',
+    location: 'Asokwa, Kumasi',
+    profile_image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80',
+    created_at: '2026-02-10T11:30:00Z',
+  },
+  {
+    id: 'user-artisan-3',
+    role: 'artisan',
+    full_name: 'Ama Serwah',
+    phone: '+233 55 333 1122',
+    location: 'Airport Residential Area, Accra',
+    profile_image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80',
+    created_at: '2026-03-01T09:15:00Z',
+  },
+  {
+    id: 'user-artisan-4',
+    role: 'artisan',
+    full_name: 'Kwame Boateng',
+    phone: '+233 24 999 8888',
+    location: 'Takoradi Harbor, Takoradi',
+    profile_image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80',
+    created_at: '2026-03-12T14:20:00Z',
+  },
+  {
+    id: 'user-artisan-5',
+    role: 'artisan',
+    full_name: 'Richard Appiah',
+    phone: '+233 24 555 6677',
+    location: 'Akotex, Koforidua',
+    profile_image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=300&q=80',
+    created_at: '2026-03-24T08:00:00Z',
+  },
+  {
+    id: 'user-artisan-6',
+    role: 'artisan',
+    full_name: 'Yusif Ibrahim',
+    phone: '+233 27 123 4567',
+    location: 'Lamashagu, Tamale',
+    profile_image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80',
+    created_at: '2026-04-02T13:45:00Z',
+  },
+  {
+    id: 'user-customer-1',
+    role: 'customer',
+    full_name: 'Sena Adjei',
+    phone: '+233 24 777 6655',
+    location: 'Spintex, Accra',
+    profile_image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80',
+    created_at: '2026-02-18T10:00:00Z',
+  },
+  {
+    id: 'user-customer-2',
+    role: 'customer',
+    full_name: 'Prince Opoku',
+    phone: '+233 59 111 2222',
+    location: 'Santasi, Kumasi',
+    profile_image: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=300&q=80',
+    created_at: '2026-03-05T16:22:00Z',
+  },
+  {
+    id: 'user-admin',
+    role: 'admin',
+    full_name: 'LocalServer Admin',
+    phone: '+233 30 123 4567',
+    location: 'Digital Address GA-101-2022, Accra',
+    profile_image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80',
+    created_at: '2026-01-01T08:00:00Z',
+  }
+];
+
+export const INITIAL_ARTISAN_PROFILES: ArtisanProfile[] = [
+  {
+    id: 'artisan-profile-1',
+    user_id: 'user-artisan-1',
+    business_name: 'PowerLink Electrical Services',
+    category: 'Electricians',
+    description: 'Specialist in industrial and residential electrical installations, wiring, fuse box repairs, and smart home lighting installations. Serving Greater Accra for over 8 years with certified safety compliance.',
+    region: 'Greater Accra',
+    city: 'East Legon',
+    gps_location: 'GA-321-4560',
+    years_experience: 8,
+    verified: true,
+    featured: true,
+    average_rating: 4.8,
+    total_reviews: 14,
+    created_at: '2026-01-15T11:00:00Z',
+  },
+  {
+    id: 'artisan-profile-2',
+    user_id: 'user-artisan-2',
+    business_name: 'Mensah Plumbing Works',
+    category: 'Plumbers',
+    description: 'Expert emergency plumbing, borehole setups, bathroom remodeling, sewage piping, and water pump installations. Quality craftsmanship guaranteed across Kumasi.',
+    region: 'Ashanti',
+    city: 'Kumasi',
+    gps_location: 'AK-044-8832',
+    years_experience: 12,
+    verified: true,
+    featured: true,
+    average_rating: 4.7,
+    total_reviews: 18,
+    created_at: '2026-02-10T12:00:00Z',
+  },
+  {
+    id: 'artisan-profile-3',
+    user_id: 'user-artisan-3',
+    business_name: 'Ama Tech CCTV & Security Systems',
+    category: 'CCTV Installers',
+    description: 'Professional surveillance camera installations, biometric access controls, intercom systems, and security system maintenance. Serving high-end and residential clients in Accra.',
+    region: 'Greater Accra',
+    city: 'Accra',
+    gps_location: 'GA-019-2041',
+    years_experience: 5,
+    verified: true,
+    featured: false,
+    average_rating: 4.9,
+    total_reviews: 9,
+    created_at: '2026-03-01T10:00:00Z',
+  },
+  {
+    id: 'artisan-profile-4',
+    user_id: 'user-artisan-4',
+    business_name: 'Kwame Solar Power Solutions',
+    category: 'Solar Technicians',
+    description: 'Design and installation of high-efficiency off-grid solar systems, solar water heaters, inverter repairs, and backup battery banks to combat power outages.',
+    region: 'Western',
+    city: 'Takoradi',
+    gps_location: 'WS-105-0988',
+    years_experience: 6,
+    verified: false,
+    featured: true,
+    average_rating: 4.3,
+    total_reviews: 6,
+    created_at: '2026-03-12T15:00:00Z',
+  },
+  {
+    id: 'artisan-profile-5',
+    user_id: 'user-artisan-5',
+    business_name: 'Appiah Wooden Designs',
+    category: 'Carpenters',
+    description: 'Modern and African traditional bespoke woodworks, executive office furniture, fitted kitchens, closets, and structural roofing work.',
+    region: 'Eastern',
+    city: 'Koforidua',
+    gps_location: 'EN-120-4321',
+    years_experience: 15,
+    verified: true,
+    featured: false,
+    average_rating: 4.5,
+    total_reviews: 8,
+    created_at: '2026-03-24T09:00:00Z',
+  },
+  {
+    id: 'artisan-profile-6',
+    user_id: 'user-artisan-6',
+    business_name: 'Ibrahim Metal Fabricators & Welder',
+    category: 'Welders',
+    description: 'High-quality gate fabrication, security burglar proofs, structural steel welding, and metal design work. Durable materials and clean finishing.',
+    region: 'Northern',
+    city: 'Tamale',
+    gps_location: 'NT-301-8899',
+    years_experience: 10,
+    verified: false,
+    featured: false,
+    average_rating: 4.6,
+    total_reviews: 5,
+    created_at: '2026-04-02T14:00:00Z',
+  }
+];
+
+export const INITIAL_SERVICES: Service[] = [
+  // Artisan 1 Services
+  {
+    id: 'service-1',
+    artisan_id: 'artisan-profile-1',
+    service_name: '3-Bedroom House Complete Wiring',
+    price_range: 'GH₵ 3,500 - GH₵ 5,000',
+    description: 'Full electrical conduit wiring, fitting distribution boards, switches, sockets and final fixtures connection.',
+  },
+  {
+    id: 'service-2',
+    artisan_id: 'artisan-profile-1',
+    service_name: 'Fault Finding & Rewiring/Repair',
+    price_range: 'GH₵ 200 - GH₵ 600',
+    description: 'Diagnostic troubleshooting of trippings, short circuits, faulty breakers, and load balancing.',
+  },
+  {
+    id: 'service-3',
+    artisan_id: 'artisan-profile-1',
+    service_name: 'Inverter & Changeover Switch Installation',
+    price_range: 'GH₵ 400 - GH₵ 800',
+    description: 'Integration of back-up power inverters and automatic/manual generator changeover systems.',
+  },
+
+  // Artisan 2 Services
+  {
+    id: 'service-4',
+    artisan_id: 'artisan-profile-2',
+    service_name: 'Borehole Water Pump Connection & Setup',
+    price_range: 'GH₵ 1,200 - GH₵ 2,000',
+    description: 'Submersible water pump insertion, overhead tank linkage, float switch layout, and poly-tank clean connection.',
+  },
+  {
+    id: 'service-5',
+    artisan_id: 'artisan-profile-2',
+    service_name: 'Emergency Pipe Blockage & Leakage Repair',
+    price_range: 'GH₵ 150 - GH₵ 400',
+    description: 'Rapid unclogging of toilets, drains, water mains fix, under-sink repairs and joint sealing.',
+  },
+
+  // Artisan 3 Services
+  {
+    id: 'service-6',
+    artisan_id: 'artisan-profile-3',
+    service_name: '8-Channel IP CCTV Installation',
+    price_range: 'GH₵ 2,500 - GH₵ 4,000',
+    description: 'Installation of high definition IP cameras, POE switch, NVR configuration, dynamic IP smartphone linkage.',
+  },
+
+  // Artisan 4 Services
+  {
+    id: 'service-7',
+    artisan_id: 'artisan-profile-4',
+    service_name: '3KVA Off-Grid Hybrid Solar Setup',
+    price_range: 'GH₵ 12,000 - GH₵ 18,000',
+    description: 'Full package: 4x 350W solar panels, hybrid solar inverter, 2x lithium batteries, distribution panel, mounting frames and setup.',
+  }
+];
+
+export const INITIAL_REVIEWS: Review[] = [
+  {
+    id: 'review-1',
+    artisan_id: 'artisan-profile-1',
+    customer_id: 'user-customer-1',
+    customer_name: 'Sena Adjei',
+    rating: 5,
+    comment: 'Emmanuel did a fantastic job wiring my new shop at East Legon. Very professional, arrived on time, and finished exactly when promised. Highly recommended electrical engineer!',
+    created_at: '2026-05-10T14:30:00Z',
+  },
+  {
+    id: 'review-2',
+    artisan_id: 'artisan-profile-1',
+    customer_id: 'user-customer-2',
+    customer_name: 'Prince Opoku',
+    rating: 4,
+    comment: 'Prompt response and effective changeover fix. Price was slightly high but the work standard is excellent.',
+    created_at: '2026-05-15T09:00:00Z',
+  },
+  {
+    id: 'review-3',
+    artisan_id: 'artisan-profile-2',
+    customer_id: 'user-customer-2',
+    customer_name: 'Prince Opoku',
+    rating: 5,
+    comment: 'Kofi Mensah is a wizard with borehole systems! Set up our water tank and linked the submersible pump flawlessly. Excellent and polite technician.',
+    created_at: '2026-05-20T11:20:00Z',
+  },
+  {
+    id: 'review-4',
+    artisan_id: 'artisan-profile-3',
+    customer_id: 'user-customer-1',
+    customer_name: 'Sena Adjei',
+    rating: 5,
+    comment: 'Super clean installations for our office CCTV. I can monitor the feed on my phone even while traveling. Ama provided excellent training on the software too.',
+    created_at: '2026-06-01T16:00:00Z',
+  }
+];
+
+export const INITIAL_SUBSCRIPTIONS: Subscription[] = [
+  {
+    id: 'sub-1',
+    artisan_id: 'artisan-profile-1',
+    plan: 'premium',
+    start_date: '2026-05-01T00:00:00Z',
+    end_date: '2026-08-01T00:00:00Z',
+    active: true,
+    price_paid: 150,
+  },
+  {
+    id: 'sub-2',
+    artisan_id: 'artisan-profile-2',
+    plan: 'enterprise',
+    start_date: '2026-04-15T00:00:00Z',
+    end_date: '2026-10-15T00:00:00Z',
+    active: true,
+    price_paid: 600,
+  },
+  {
+    id: 'sub-3',
+    artisan_id: 'artisan-profile-4',
+    plan: 'premium',
+    start_date: '2026-06-01T00:00:00Z',
+    end_date: '2026-07-01T00:00:00Z',
+    active: true,
+    price_paid: 50,
+  }
+];
+
+export const PORTFOLIO_MOCK_DATA: Record<string, Array<{title: string, img: string, desc: string}>> = {
+  'artisan-profile-1': [
+    { title: 'Conduit Wiring - East Legon Residential', img: 'https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=400&q=80', desc: 'Installed modern safety wiring in a new luxury 4-bedroom house.' },
+    { title: 'Premium Backup Inverter Installation', img: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=400&q=80', desc: 'Integrated 5KVA solar compatible backup battery bank.' }
+  ],
+  'artisan-profile-2': [
+    { title: 'Overhead Tank Connection Site', img: 'https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?auto=format&fit=crop&w=400&q=80', desc: 'Twin 5000L polytank link with digital automatic water controller.' },
+    { title: 'Luxury Bathroom Copper Pipe Layout', img: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=400&q=80', desc: 'Premium plumbing and tiling in Kumasi luxury estate.' }
+  ]
+};
